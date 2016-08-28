@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kr.laruyan.floatingyoutubeembed" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ShowFloatingYouTubeEmbedService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name=".YouTubePopUpEmbedActivity"
+            android:label="@string/title_activity_you_tube_pop_up_embed"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" android:host="youtu.be" />
+                <data android:scheme="https" android:host="youtu.be" />
+                <data android:scheme="http" android:host="youtube.com"
+                     />
+                <data android:scheme="https" android:host="youtube.com"
+                     />
+                <data android:scheme="http" android:host="www.youtube.com"
+                     />
+                <data android:scheme="https" android:host="www.youtube.com"
+                     />
+                <data android:scheme="http" android:host="m.youtube.com"
+                     />
+                <data android:scheme="https" android:host="m.youtube.com"
+                     />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

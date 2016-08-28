@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FloatingYouTubeEmbed</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_you_tube_pop_up_embed">YouTubePopUpEmbedActivity</string>
+</resources>
